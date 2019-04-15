@@ -14,8 +14,9 @@ class RestaurantAdmin(admin.ModelAdmin):
 # Register the admin class with the associated model
 admin.site.register(Restaurant, RestaurantAdmin)
 
-admin.site.register(Food)
-admin.site.register(Ingredient)
+admin.site.register(Food) # Add Admin class
+admin.site.register(Ingredient) # Add Admin class
+
 admin.site.register(foodType)
 admin.site.register(ingredientType)
 admin.site.register(Cuisine)
