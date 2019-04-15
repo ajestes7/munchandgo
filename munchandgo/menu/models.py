@@ -1,5 +1,7 @@
 import os
 from django.db import models
+from django.urls import reverse 
+
 
 class Restaurant(models.Model):
     """Model representing a restaurant."""
@@ -12,6 +14,18 @@ class Restaurant(models.Model):
     def __str__(self):
         """String for representing the Model object."""
         return self.name
+    
+    def get_absolute_url(self):
+        """Returns the url to access a detail record for this restaurant."""
+        return reverse('restaurant-detail', args=[str(self.id)])
+    
+    def display_cuisine(self):
+        """Create a string for the cuisine. This is required to display cuisine in Admin."""
+        return ', '.join(cuisine.name for cuisine in self.cuisine.all()[:3])
+
+    def display_menu(self):
+        """Create a string for the menu. This is required to display menu in Admin."""
+        return ', '.join(menu.name for menu in self.menu.all()[:3])
 
 class Food(models.Model):
     """Model representing a food item."""

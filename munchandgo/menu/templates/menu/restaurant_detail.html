@@ -1,0 +1,11 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>{{ restaurant.name }}</h1>
+
+  <p><strong>Website:</strong> <a href="{{ restaurant.website }}">{{ restaurant.website }}</a></p>
+  <p><strong>Summary:</strong> {{ restaurant.summary }}</p>
+  <p><strong>Menu:</strong> {{ restaurant.menu }}</p> <!-- Link not yet defined -->
+  <p><strong>Cuisine:</strong> {{ restaurant.cuisine }}</p>
+
+{% endblock %}
