@@ -3,9 +3,25 @@
 {% block content %}
   <h1>{{ restaurant.name }}</h1>
 
-  <p><strong>Website:</strong> <a href="{{ restaurant.website }}">{{ restaurant.website }}</a></p>
-  <p><strong>Summary:</strong> {{ restaurant.summary }}</p>
-  <p><strong>Menu:</strong> {{ restaurant.menu }}</p> <!-- Link not yet defined -->
-  <p><strong>Cuisine:</strong> {{ restaurant.cuisine }}</p>
+  <div>
+    <p><strong>Website:</strong> <a href="{{ restaurant.website }}">{{ restaurant.website }}</a></p>
+    <p><strong>Summary:</strong> {{ restaurant.summary }}</p>
+    <p><strong>Menu:</strong></p> 
+      <ul>
+        {% for menu in restaurant.menu.all %}
+          <li>
+            <p><a href="{% url 'food-detail' menu.pk %}">{{ menu }}</a>{% if not forloop.last %}</p>
+          </li>
+        {% endif %}{% endfor %}
+      </ul>
+    <p><strong>Cuisine:</strong></p>
+      <ul>
+        {% for cuisine in restaurant.cuisine.all %}
+          <li>
+            <p>{{ cuisine }}{% if not forloop.last %}</p>
+          </li>
+        {% endif %}{% endfor %}
+      </ul>
+  </div>
 
 {% endblock %}

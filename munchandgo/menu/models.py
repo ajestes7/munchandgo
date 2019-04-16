@@ -38,6 +38,18 @@ class Food(models.Model):
     def __str__(self):
         """String for representing the Model object."""
         return self.name
+    
+    def get_absolute_url(self):
+        """Returns the url to access a detail record for this food."""
+        return reverse('food-detail', args=[str(self.id)])
+
+    def display_ingredients(self):
+        """Create a string for the ingredients. This is required to display ingredients in Admin."""
+        return ', '.join(ingredients.name for ingredients in self.ingredients.all()[:3])
+
+    def display_allergens(self):
+        """Create a string for the allergens. This is required to display allergens in Admin."""
+        return ', '.join(allergens.name for allergens in self.allergens.all()[:3])
 
 class Ingredient(models.Model):
     """Model representing  an ingredient."""

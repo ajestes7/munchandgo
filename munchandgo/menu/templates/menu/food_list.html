@@ -1,0 +1,16 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Food List</h1>
+  {% if food_list %}
+  <ul>
+    {% for food in food_list %}
+      <li>
+        <a href="{{ food.get_absolute_url }}">{{ food.name }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>There is no food in our database.</p>
+  {% endif %}       
+{% endblock %}

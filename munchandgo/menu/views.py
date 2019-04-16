@@ -15,7 +15,10 @@ def index(request):
     num_cuisine = Cuisine.objects.all().count()
     num_allergen = Allergen.objects.all().count()
 
-    
+    # Number of visits to this view, as counted in the session variable.
+    num_visits = request.session.get('num_visits', 0)
+    request.session['num_visits'] = num_visits + 1
+
     context = {
         'num_restaurant': num_restaurant,
         'num_food': num_food,
@@ -24,6 +27,7 @@ def index(request):
         'num_ingredientType': num_ingredientType,
         'num_cuisine': num_cuisine,
         'num_allergen': num_allergen,
+        'num_visits': num_visits,
     }
 
     # Render the HTML template index.html with the data in the context variable
@@ -36,3 +40,9 @@ class RestaurantListView(generic.ListView):
 
 class RestaurantDetailView(generic.DetailView):
     model = Restaurant
+
+class FoodListView(generic.ListView):
+    model = Food
+
+class FoodDetailView(generic.DetailView):
+    model = Food
