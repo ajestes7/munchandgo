@@ -1,5 +1,113 @@
-.sidebar-nav {
-    margin-top: 20px;
-    padding: 0;
-    list-style: none;
+body {
+    font-family: 'Oswald', sans-serif;
+}
+
+h1 {
+    font-size: 3em;
+    padding: 20px 0 20px 0;
+}
+
+h2 {
+    font-size: 1.5em;
+    padding: 20px 0 20px 0;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: 1;
+    width: 100vw!important;
+    text-decoration: none;
+    padding: 20px;
+    font-size: 1.25em;
+    background-color: rgb(14, 0, 75);
+}
+
+.navigation a {
+    color: white;
+}
+
+.navigation-list {
+    display: flex;
+    width: 40%;
+    text-decoration: none;
+    justify-content: flex-end;
+}
+
+.navigation-list li {
+    color: white;
+    padding: 5px;
+}
+
+.content-container {
+    width: 80vw;
+}
+
+.home-header {
+    font-size: 1.5em;
+    padding-bottom: 20px;
+}
+
+.home-content {
+    font-size: 1.25em;
+}
+
+.home-content ul {
+    padding-top: 10px;
+}
+
+.home-content li {
+    padding-left: 20px;
+    line-height: 1.5em;
+}
+
+.home-visits {
+    padding-top: 50px;
+}
+
+.restaurant-list {
+    padding-left: 20px;
+    font-size: 1.5em;
+    line-height: 1.5em;
+}
+
+.restaurant-detail {
+    font-size: 1.5em;
+    line-height: 1.5em;
+}
+
+.cuisine-list {
+    padding-left: 20px;
+    line-height: 1.5em;
+}
+
+.menu-list {
+    padding-left: 20px;
+    line-height: 1.5em;
+}
+
+.food-detail {
+    font-size: 1.5em;
+    line-height: 1.5em;
+}
+
+.ingredients-list {
+    padding-left: 20px;
+    line-height: 1.5em;
+}
+
+.allergens-list {
+    padding-left: 20px;
+    line-height: 1.5em;
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 767px) {
+
+    .content-container {
+        width: 95vw;
+    }
+
 }

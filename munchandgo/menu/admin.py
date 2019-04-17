@@ -9,7 +9,7 @@ from menu.models import Restaurant, Food, Ingredient, foodType, ingredientType, 
 
 class RestaurantAdmin(admin.ModelAdmin):
     list_display = ('name', 'display_menu', 'display_cuisine')
-    fields = ['name', 'menu', 'cuisine']
+    fields = ['name', 'menu', 'cuisine', 'summary', 'website']
 
 # Register the admin class with the associated model
 admin.site.register(Restaurant, RestaurantAdmin)

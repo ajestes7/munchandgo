@@ -1,26 +1,27 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
+<div class="content-container">
   <h1>{{ food.name }}</h1>
 
-  <div>
-    <p><strong>Food Type:</strong> {{ food.foodType }}</p>
-    <p><strong>Ingredients:</strong></p> 
-      <ul>
+  <div class="food-detail">
+    <p><strong>Food Type:</strong> {{ food.foodType }}</p><br>
+    <h2><strong>Ingredients:</strong></h2> 
+      <ul class="ingredients-list">
         {% for ingredients in food.ingredients.all %}
           <li>
             <p><strong>{{ ingredients }}</strong> (Ingredient Type: {{ ingredients.ingredientType }}){% if not forloop.last %}</p>
           </li>
         {% endif %}{% endfor %}
       </ul>
-    <p><strong>Allergens:</strong></p>
-      <ul>
+    <h2><strong>Allergens:</strong></h2>
+      <ul class="allergens-list">
         {% for allergens in food.allergens.all %}
           <li>
             <p>{{ allergens }}{% if not forloop.last %}</p>
           </li>
         {% endif %}{% endfor %}
-      </ul>
+      </ul><br>
   </div>
-
+</div>
 {% endblock %}

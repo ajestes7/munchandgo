@@ -1,16 +1,18 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
-  <h1>Restaurant List</h1>
-  {% if restaurant_list %}
-  <ul>
-    {% for restaurant in restaurant_list %}
-      <li>
-        <a href="{{ restaurant.get_absolute_url }}">{{ restaurant.name }}</a>
-      </li>
-    {% endfor %}
-  </ul>
-  {% else %}
-    <p>There are no restaurants in our database.</p>
-  {% endif %}       
+  <div class="content-container">
+    <h1>Restaurant List</h1>
+    {% if restaurant_list %}
+    <ul class="restaurant-list">
+      {% for restaurant in restaurant_list %}
+        <li>
+          <a href="{{ restaurant.get_absolute_url }}">{{ restaurant.name }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+    {% else %}
+      <p>There are no restaurants in our database.</p>
+    {% endif %}  
+  </div>     
 {% endblock %}

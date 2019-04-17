@@ -1,19 +1,25 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
-  <h1>MunchAndGo</h1>
-  <p>Welcome to MunchAndGo, a website developed by <em>AJ Estes</em>!</p>
-  <h2>Check Out Our Stuff!</h2>
-  <p>MunchAndGo has the following restaurant data:</p>
-  <ul>
-    <li><strong>Restaurants:</strong> {{ num_restaurant }}</li>
-    <li><strong>Food Items:</strong> {{ num_food }}</li>
-    <li><strong>Food Types:</strong> {{ num_foodType }}</li>
-    <li><strong>Ingredients:</strong> {{ num_ingredient }}</li>
-    <li><strong>Ingredient Types:</strong> {{ num_ingredientType }}</li>
-    <li><strong>Cuisine Types:</strong> {{ num_cuisine }}</li>
-    <li><strong>Allergens:</strong> {{ num_allergen }}</li>
-  </ul>
+  <div class="content-container">
+    <div class="home-header">
+      <h1>MunchAndGo</h1>
+      <p>Welcome to MunchAndGo, a website developed by AJ Estes!</p>
+    </div>
+    <div class="home-content">
+      <h2>Check Out Our Stuff!</h2>
+        <p>MunchAndGo has the following restaurant data:</p>
+      <ul>
+        <li><strong>Restaurants:</strong> {{ num_restaurant }}</li>
+        <li><strong>Food Items:</strong> {{ num_food }}</li>
+        <li><strong>Food Types:</strong> {{ num_foodType }}</li>
+        <li><strong>Ingredients:</strong> {{ num_ingredient }}</li>
+        <li><strong>Ingredient Types:</strong> {{ num_ingredientType }}</li>
+        <li><strong>Cuisine Types:</strong> {{ num_cuisine }}</li>
+        <li><strong>Allergens:</strong> {{ num_allergen }}</li>
+      </ul>
+    </div>
 
-  <p>You have visited this page {{ num_visits }}{% if num_visits == 1 %} time{% else %} times{% endif %}.</p>
+    <p class="home-visits">You have visited this page {{ num_visits }}{% if num_visits == 1 %} time{% else %} times{% endif %}.</p>
+  </div>
 {% endblock %}
